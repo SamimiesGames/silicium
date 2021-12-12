@@ -29,12 +29,8 @@ jobs:
       - name: Update pip
         run: python -m pip install --upgrade pip
       - name: Update deps
-        run: python -m pip install -e .
-      - name: Install tox-gh
-        run: python -m pip install tox-gh
-      - name: Setup tests
-        run: tox4 -r -vv --notest
+        run: python -m pip install -r ./requirements_dev.txt
       - name: Run tests
-        run: tox4 -r --skip-pkg-install
+        run: tox --skip-missing-interpreters
         env:
           PYTEST_ADDOPTS: "-vv --duration=10"
