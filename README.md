@@ -1,5 +1,6 @@
 # Silicium
 ![tests](https://github.com/SamimiesGames/Silicium/actions/workflows/tests.yaml/badge.svg)
+
 Silicium is an ahead-of-time interpreted all-language compiler in Python3.
 
 # Quick start.
@@ -14,15 +15,18 @@ Here are some one liners that you can use to set it all up.
 ### Linux
 
 Debian based (Ubuntu, Kubuntu, KDE Neon):
+
 `sudo apt-get update && sudo apt-get upgrade && sudo apt-get install python3.6 python3-pip`
 
 RHEL Based (Redhat, Fedora, Cent-OS):
+
 `sudo dnf upgrade && sudo dnf install python36`
 
 Arch Based (Manjaro, Garuda, EndeavourOS):
 
 For arch make sure you have the yay package manager installed.
 If you do not you can do so with this line in bash:
+
 `sudo pacman -S git && cd /opt && sudo git clone https://aur.archlinux.org/yay-git.git && sudo chown -R $(whoami):$(whoami) ./yay-git && cd yay-git && makepkg -si`
 
 `sudo yay -Syu --devel --timeupdate && yay -S python36`
