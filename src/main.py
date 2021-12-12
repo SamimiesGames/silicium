@@ -5,7 +5,8 @@ html = HTML()
 
 DefaultTheme(html)
 
-Text(html, text="Hello, Silicium-web!")
+text = Text(html, text="Hello, Silicium-web!")
+Text(text, text="I'm behind!")
 
 
 html.run()
