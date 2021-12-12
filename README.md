@@ -45,6 +45,8 @@ For windows you can download python3.6 from [this link](https://www.python.org/f
 
 To download Silicium run `git clone https://github.com/SamimiesGames/silicium.git` in the folder you would like to keep it in.
 
+Open a terminal in the folder and run `pip install -e .` or for dev run `pip install -r ./requirements_dev.txt`
+
 # Silicium-Web is a progressive, declarative web technologies framework made in Python.
 
 Silicium-Web is a progressive, declarative web technologies framework using Silicium as a base.
