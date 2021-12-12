@@ -2,7 +2,7 @@ from silicium import AbstractAction
 
 
 HTML_ACTION_EVENTS = [
-    "onclick",
+    "onclick", "hover"
 ]
 
 
