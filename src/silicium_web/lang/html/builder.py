@@ -1,7 +1,6 @@
-from typing import Union
-
 from silicium import Builder
 from silicium.component import AbstractComponent
+import htmlmin
 
 
 class HTMLBuilder(Builder):
@@ -36,7 +35,7 @@ class HTMLBuilder(Builder):
 
     @staticmethod
     def minimize(html_content):
-        return html_content.replace("\n", "")
+        return htmlmin.minify(html_content, remove_comments=True, remove_empty_space=True, reduce_empty_attributes=True)
 
     @staticmethod
     def variable_format(name: str):
