@@ -5,11 +5,11 @@ from src import silicium_web
 
 class TestSiliciumMain:
     def test_builder(x):
-        pass
+        assert True
 
 class TestSiliciumWeb:
     def test_html(x):
-        pass
+        assert True
 
     def test_css(x):
-        pass
+        assert True
