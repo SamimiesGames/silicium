@@ -1,12 +1,14 @@
 from silicium import Builder
 from silicium.component import AbstractComponent
+from silicium import vars
 import htmlmin
 
 
 class HTMLBuilder(Builder):
     build_locations = {
         "css": [],
-        "html": []
+        "html": [],
+        "scripts": []
     }
 
     def build(self, build_content: str = None) -> str:
@@ -27,16 +29,11 @@ class HTMLBuilder(Builder):
 
     def place_all_tags(self, html_content) -> str:
         for build_location, html in self.build_locations.items():
-            build_location = self.variable_format(build_location)
             build_content = "".join(html)
-            html_content = html_content.replace(build_location, build_content)
+            html_content = vars.translate(html_content, build_location, build_content)
 
         return html_content
 
     @staticmethod
     def minimize(html_content):
         return htmlmin.minify(html_content, remove_comments=True, remove_empty_space=True, reduce_empty_attributes=True)
-
-    @staticmethod
-    def variable_format(name: str):
-        return "{%" + f" {name} " + "%}"

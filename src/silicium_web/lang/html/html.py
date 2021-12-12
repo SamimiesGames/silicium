@@ -1,9 +1,8 @@
 from silicium import AbstractScene, Component
+from silicium.utils import require
 from .builder import HTMLBuilder
-import os
 
-
-BOILER_PLATE_HTML = open(os.path.join(os.path.dirname(__file__), "html", "index.html"), "r").read()
+BOILER_PLATE_HTML = require(__file__, "templates", "index.html")
 
 
 class BasicHTML(Component):
