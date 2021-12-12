@@ -12,11 +12,13 @@ class HTMLBuilder(Builder):
 
         for component in self.components:
             print(f"(html) BuildComponent: {component.__class__.__name__}")
-            build_targets[component.build_target].append(f"{component.code}\n")
+            build_targets[component.build_target].append(f"{component.code}")
 
         for build_target, html in build_targets.items():
             build_target = "{%" + f" {build_target} " + "%}"
             build_content = "".join(html)
             html_content = html_content.replace(build_target, build_content)
+
+        html_content = html_content.replace("\n", "")
 
         return html_content
