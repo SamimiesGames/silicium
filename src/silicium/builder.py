@@ -8,7 +8,7 @@ from .component import AbstractComponent
 
 @dataclass
 class AbstractBuilder(ABC):
-    build_component: Union[None, AbstractComponent] = None
+    builder_component: Union[None, AbstractComponent] = None
     components: list[AbstractComponent] = field(default_factory=list)
 
     @abstractmethod
