@@ -57,4 +57,3 @@ class Component(AbstractComponent):
                 sub_component_html += sub_component.grand_render()
 
         return f"{left_side}{sub_component_html}{right_side}"
-
