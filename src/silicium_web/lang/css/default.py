@@ -1,4 +1,6 @@
 from silicium import Component
+import os
+from .optimizer import min_css
 
 
 class DefaultTheme(Component):
@@ -6,22 +8,7 @@ class DefaultTheme(Component):
 
     @property
     def code(self) -> str:
-        return """
-        <style>
-        html {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          scroll-behavior: smooth;
-          background-color: #4684ff;
-          font-family: -apple-system, 'Arial', sans-serif;
-          color: #1e1e1e;
-          text-align: center;
-        }
-        p {
-          font-size: 2rem;
-        }
-        </style>
-        """
+        css = open(os.path.join(os.path.dirname(__file__), "default.css"), "r").read()
+        css = min_css(css)
+        return f"<style>{css}</style>"
 

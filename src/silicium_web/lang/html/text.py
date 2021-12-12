@@ -7,4 +7,4 @@ class Text(Component):
 
     @property
     def code(self) -> str:
-        return f"<p>{self.text}</p>"
+        return f"<div>{self.text}</div>"
