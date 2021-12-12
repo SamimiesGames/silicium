@@ -1,29 +1,9 @@
 from silicium import AbstractScene, Component
 from .builder import HTMLBuilder
+import os
 
 
-BOILER_PLATE_HTML = """
-<!doctype html>
-<html class="no-js" lang="en">
-
-<head>
-  <meta charset="utf-8">
-
-  <title>Silicium Site</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  
-  {% css %}
-</head>
-<body>
-{% html %}
-</body>
-
-</html>
-"""
+BOILER_PLATE_HTML = open(os.path.join(os.path.dirname(__file__), "html", "index.html"), "r").read()
 
 
 class BasicHTML(Component):
