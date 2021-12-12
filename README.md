@@ -1,7 +1,8 @@
 # Silicium
-![tests](https://github.com/SamimiesGames/Silicium/actions/workflows/tests.yaml/badge.svg)
 
 Silicium is an ahead-of-time interpreted all-language compiler in Python3.
+
+![tests](https://github.com/SamimiesGames/Silicium/actions/workflows/tests.yaml/badge.svg)
 
 # Quick start.
 Silicium uses Python3 as it's main language.
@@ -15,21 +16,26 @@ Here are some one liners that you can use to set it all up.
 ### Linux
 
 Debian based (Ubuntu, Kubuntu, KDE Neon):
-
-`sudo apt-get update && sudo apt-get upgrade && sudo apt-get install python3.6 python3-pip`
+```
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install python3.6 python3-pip
+```
 
 RHEL Based (Redhat, Fedora, Cent-OS):
-
-`sudo dnf upgrade && sudo dnf install python36`
+```
+sudo dnf upgrade && sudo dnf install python36
+```
 
 Arch Based (Manjaro, Garuda, EndeavourOS):
 
 For arch make sure you have the yay package manager installed.
 If you do not you can do so with this line in bash:
+```
+sudo pacman -S git && cd /opt && sudo git clone https://aur.archlinux.org/yay-git.git && sudo chown -R $(whoami):$(whoami) ./yay-git && cd yay-git && makepkg -si
+```
 
-`sudo pacman -S git && cd /opt && sudo git clone https://aur.archlinux.org/yay-git.git && sudo chown -R $(whoami):$(whoami) ./yay-git && cd yay-git && makepkg -si`
-
-`sudo yay -Syu --devel --timeupdate && yay -S python36`
+```
+sudo yay -Syu --devel --timeupdate && yay -S python36
+```
 
 ### Windows
 
@@ -39,6 +45,7 @@ For windows you can download python3.6 from [this link](https://www.python.org/f
 ## Installation
 
 To download Silicium run `git clone https://github.com/SamimiesGames/silicium.git` in the folder you would like to keep it in.
+
 
 # Silicium-Web is a progressive, declarative web technologies framework made in Python.
 
