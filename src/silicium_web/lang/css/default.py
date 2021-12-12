@@ -8,7 +8,7 @@ class DefaultTheme(Component):
 
     @property
     def code(self) -> str:
-        css = require(__file__, "default.css")
+        css = require(__file__, "themes.css")
         css = min_css(css)
         return f"<style>{css}</style>"
 

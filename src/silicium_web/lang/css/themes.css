@@ -1,0 +1,23 @@
+:root {
+    --background-color: #1e1e1e;
+    --font-color: whitesmoke;
+}
+
+*[data-theme="dark"] {
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+*[data-theme="light"] {
+    background-color: var(--font-color);
+    color: var(--background-color);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: -apple-system, 'Arial', sans-serif;
+}
+
+p {
+  font-size: 2rem;
+}
