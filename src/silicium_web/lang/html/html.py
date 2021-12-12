@@ -1,9 +1,8 @@
 from silicium import AbstractScene, Component
 from .builder import HTMLBuilder
-from dataclasses import field
 
 
-BOILDER_PLATE_HTML = """
+BOILER_PLATE_HTML = """
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -16,10 +15,11 @@ BOILDER_PLATE_HTML = """
   
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  
+  {% css %}
 </head>
-
 <body>
-{% content %}
+{% html %}
 </body>
 
 </html>
@@ -27,14 +27,26 @@ BOILDER_PLATE_HTML = """
 
 
 class BasicHTML(Component):
-
     @property
     def code(self) -> str:
-        return BOILDER_PLATE_HTML
+        return BOILER_PLATE_HTML
 
 
 class HTML(AbstractScene):
-    builder: HTMLBuilder = HTMLBuilder()
-
     def __init__(self):
-        self.builder.build_component = BasicHTML(self, add_now=False)
+        html_builder = HTMLBuilder()
+
+        self.builder = html_builder
+
+        self.builder.build_component = BasicHTML(self, add=False)
+
+    def run(self) -> None:
+        print(f"Run scene: {self.__class__.__name__}")
+
+        page = self.builder.build()
+
+        with open("index.html", "w") as fh:
+            fh.write(page)
+
+        print(f"Run success: {self.__class__.__name__}")
+

@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 
 
 class AbstractComponent(ABC):
+    build_target: str
+
     @property
     @abstractmethod
     def code(self) -> str:
@@ -9,11 +11,11 @@ class AbstractComponent(ABC):
 
 
 class Component(AbstractComponent):
-    def __init__(self, scene, add_now: bool = True, **kwargs):
+    def __init__(self, scene, add: bool = True, **kwargs):
         for name, value in kwargs.items():
             setattr(self, name, value)
 
-        if add_now:
+        if add:
             scene.builder.add_component(self)
 
     @property
