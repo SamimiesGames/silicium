@@ -41,11 +41,9 @@ sudo yay -Syu --devel --timeupdate && yay -S python36
 
 For windows you can download python3.6 from [this link](https://www.python.org/ftp/python/3.6.0/python-3.6.0-amd64.exe)
 
-
 ## Installation
 
 To download Silicium run `git clone https://github.com/SamimiesGames/silicium.git` in the folder you would like to keep it in.
-
 
 # Silicium-Web is a progressive, declarative web technologies framework made in Python.
 
