@@ -4,7 +4,7 @@ Silicium is an ahead-of-time interpreted all-language compiler in Python3.
 
 ![tests](https://github.com/SamimiesGames/Silicium/actions/workflows/tests.yaml/badge.svg)
 
-# Quick start.
+# Quick Start
 Silicium uses Python3 as it's main language.
 To get started using Silicium install the required dependencies for your system.
 
