@@ -38,7 +38,7 @@ class HTML(AbstractScene):
 
         self.builder = html_builder
 
-        self.builder.build_component = BasicHTML(self, add=False)
+        self.builder.builder_component = BasicHTML(self, add=False)
 
     def run(self) -> None:
         print(f"Run scene: {self.__class__.__name__}")
