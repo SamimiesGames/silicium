@@ -16,7 +16,7 @@ class AbstractBuilder(ABC):
         ...
 
     @abstractmethod
-    def build(self):
+    def build(self, build_content: str = None):
         ...
 
 
@@ -25,5 +25,6 @@ class Builder(AbstractBuilder):
         self.components.append(component)
 
     @abstractmethod
-    def build(self):
+    def build(self, build_content: str = None) -> str:
         ...
+

@@ -2,19 +2,21 @@ from silicium import Builder
 
 
 class HTMLBuilder(Builder):
-    def build(self):
-        build_content = self.build_component.code
-        new_content = ""
+    def build(self, build_content: str = None) -> str:
+        build_targets = {
+            "css": [],
+            "html": []
+        }
 
-        indent = 2
+        html_content = self.build_component.code
 
         for component in self.components:
-            print(f"BuildComponent: {component.__class__.__name__}")
-            new_content += f"{' ' * indent}{component.code}\n"
+            print(f"(html) BuildComponent: {component.__class__.__name__}")
+            build_targets[component.build_target].append(f"{component.code}\n")
 
-        build_content = build_content.replace("{% content %}", new_content)
+        for build_target, html in build_targets.items():
+            build_target = "{%" + f" {build_target} " + "%}"
+            build_content = "".join(html)
+            html_content = html_content.replace(build_target, build_content)
 
-        with open("index.html", "w") as fh:
-            fh.write(build_content)
-
-        print("Build complete.")
+        return html_content
