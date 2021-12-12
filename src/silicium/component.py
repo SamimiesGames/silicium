@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
+import uuid
+
 
 @dataclass
 class AbstractComponent(ABC):
@@ -22,6 +24,8 @@ class Component(AbstractComponent):
     def __init__(self, parent, add: bool = True, **kwargs):
         self.parent = parent
         self.sub_components = []
+
+        self.id = uuid.uuid4()
 
         for name, value in kwargs.items():
             setattr(self, name, value)

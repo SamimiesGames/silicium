@@ -8,5 +8,4 @@ DefaultTheme(html)
 text = Text(html, text="Hello, Silicium-web!")
 Text(text, text="I'm behind!")
 
-
 html.run()
