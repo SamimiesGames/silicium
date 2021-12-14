@@ -33,7 +33,7 @@ jobs:
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
           pip install -Ur requirements_dev.txt
-          python setup.py
+          python -m pip install -e .
       - name: Lint
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == env.PYTHON_LATEST
         run: flake8
