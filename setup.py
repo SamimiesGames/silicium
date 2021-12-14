@@ -1,13 +1,13 @@
 from setuptools import find_packages, setup
 
-VERISON = '0.1.0'
+VERSION = '0.1.0'
 
 # import pypandoc
 # long_description = pypandoc.convert_file('./README.md', 'rst')
 
 setup(
     name='silicium',
-    version=VERISON,
+    version=VERSION,
     description='Ahead-of-time interpreted all-language compiler in Python3',
     # long_description=long_description,
     author='Samimies',

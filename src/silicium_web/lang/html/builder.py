@@ -24,7 +24,7 @@ class HTMLBuilder(Builder):
 
         return html_content
 
-    def place_component(self, component: component.AbstractComponent):
+    def place_component(self, component: AbstractComponent):
         source = component.grand_render()
         self.build_locations[component.build_target].append(source)
 
