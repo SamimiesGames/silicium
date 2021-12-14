@@ -1,6 +1,4 @@
-from silicium import Builder
-from silicium.component import AbstractComponent
-from silicium import vars
+from silicium import Builder, component, vars
 import htmlmin
 
 
@@ -23,7 +21,7 @@ class HTMLBuilder(Builder):
 
         return html_content
 
-    def place_component(self, component: AbstractComponent):
+    def place_component(self, component: component.AbstractComponent):
         source = component.grand_render()
         self.build_locations[component.build_target].append(source)
 

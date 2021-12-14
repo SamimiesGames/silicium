@@ -3,7 +3,6 @@ from setuptools import find_packages, setup
 VERISON = '0.1.0'
 
 # import pypandoc
-
 # long_description = pypandoc.convert_file('./README.md', 'rst')
 
 setup(

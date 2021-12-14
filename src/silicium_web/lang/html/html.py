@@ -1,8 +1,7 @@
-from silicium import AbstractScene, Component
-from silicium.utils import require
+from silicium import AbstractScene, Component, utils
 from .builder import HTMLBuilder
 
-BOILER_PLATE_HTML = require(__file__, "templates", "index.html")
+BOILER_PLATE_HTML = utils.require(__file__, "templates", "index.html")
 
 
 class BasicHTML(Component):
@@ -12,10 +11,9 @@ class BasicHTML(Component):
 
 
 class HTML(AbstractScene):
+    """Return a boilerplate HTML object"""
     def __init__(self):
-        html_builder = HTMLBuilder()
-
-        self.builder = html_builder
+        self.builder = HTMLBuilder()
 
         self.builder.builder_component = BasicHTML(self, add=False)
 
