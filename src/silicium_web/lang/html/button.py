@@ -13,4 +13,3 @@ class Button(Component):
     @Action
     def onclick(self):
         self.text = "clicked"
-

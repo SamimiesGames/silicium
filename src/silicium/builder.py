@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 
 from dataclasses import dataclass, field
-from typing import Union
+# Added list for typing for back compatibility to 3.8 and 3.7
+from typing import Union, List
 
 from .component import AbstractComponent
 
@@ -9,7 +10,8 @@ from .component import AbstractComponent
 @dataclass
 class AbstractBuilder(ABC):
     builder_component: Union[None, AbstractComponent] = None
-    components: list[AbstractComponent] = field(default_factory=list)
+    # use List instead of list for typehint for py37 and py38
+    components: List[AbstractComponent] = field(default_factory=list)
 
     @abstractmethod
     def add_component(self, component: AbstractComponent):
