@@ -26,9 +26,14 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pytest tox
+          python -m pip install -r requirements.txt
           python -m pip install -r requirements_dev.txt
       - name: Run tests
-        run: python -m tox --skip-missing-interpreters
+        run: |
+          cd silicium
+          python -m tox --skip-missing-interpreters
+          cd ..
+          cd silicium_web
+          python -m tox --skip-missing-interpreters
         env:
           PYTEST_ADDOPTS: "-vv --duration=10"
