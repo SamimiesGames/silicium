@@ -8,7 +8,7 @@ class Button(Component):
 
     @property
     def code(self) -> str:
-        return f"<div>{self.text}</div>"
+        return f"""<div id="button">{self.text}</div>"""
 
     @actions.Action
     def onclick(self):
