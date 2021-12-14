@@ -23,6 +23,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          pip install tox
       - name: Run tests
         run: |
           cd silicium
