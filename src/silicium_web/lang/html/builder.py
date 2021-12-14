@@ -1,6 +1,6 @@
 from silicium import Builder
 from silicium.component import AbstractComponent
-from silicium import vars
+from silicium.utils import vars
 import htmlmin
 
 

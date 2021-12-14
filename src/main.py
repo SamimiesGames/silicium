@@ -5,6 +5,5 @@ html = HTML()
 
 DefaultTheme(html)
 
-Button(html)
 
 html.run()
