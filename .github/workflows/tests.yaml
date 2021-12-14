@@ -15,7 +15,7 @@ jobs:
           - Ubuntu
           - Windows
           - MacOs
-        python-versions: [3.7, 3.8, 3.9]
+        python-versions: [3.9]
 
     steps:
       - name: Set python for test ${{ matrix.python-version }}
@@ -23,12 +23,15 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - uses: actions/checkout@v2
-      - name: Install deps
+      - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install pytest tox
-          python -m pip install -r requirements_dev.txt
+          pip install tox
       - name: Run tests
-        run: python -m tox --skip-missing-interpreters
+        run: |
+          cd silicium
+          tox --skip-missing-interpreters
+          cd ..
+          cd silicium_web
+          tox --skip-missing-interpreters
         env:
           PYTEST_ADDOPTS: "-vv --duration=10"

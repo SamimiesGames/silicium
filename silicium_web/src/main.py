@@ -7,6 +7,6 @@ DefaultTheme(html)
 
 text = Text(html, text="Hello, Silicium-web!")
 Text(text, text="I'm behind!")
-Button(text, text="Click me to see the world!")
+Button(text, text="Click!")
 
 html.run()
