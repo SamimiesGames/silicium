@@ -1,2 +1,4 @@
-htmlmin
 pytest
+tox
+flake8
+htmlmin

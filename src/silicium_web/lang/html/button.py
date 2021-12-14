@@ -11,4 +11,3 @@ class Button(Component):
 
     def onclick(self):
         self.text = "clicked"
-
