@@ -1,8 +1,10 @@
 import re
 
 
-def min_css(css: str):
-    css_optimized = ""
+def min_css(in_css):
+    css = in_css
+    css_optimized = ''
+
     # remove comments - this will break a lot of hacks :-P
     css = re.sub(r'\s*/\*\s*\*/', "$$HACK1$$", css)  # preserve IE<6 comment hack
     css = re.sub(r'/\*[\s\S]*?\*/', "", css)
@@ -24,7 +26,7 @@ def min_css(css: str):
 
         # we don't need spaces around operators
         selectors = [re.sub(r'(?<=[\[\(>+=])\s+|\s+(?=[=~^$*|>+\]\)])', r'', selector.strip()) for selector in
-                     rule[0].split(',')]
+                    rule[0].split(',')]
 
         # order is important, but we still want to discard repetitions
         properties = {}
@@ -41,4 +43,3 @@ def min_css(css: str):
             )
 
     return css_optimized
-

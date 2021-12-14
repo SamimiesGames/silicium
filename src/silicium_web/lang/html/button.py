@@ -1,4 +1,5 @@
 from silicium import Component
+from .actions import Action
 
 
 class Button(Component):
@@ -9,5 +10,6 @@ class Button(Component):
     def code(self) -> str:
         return f"""<div id="button">{self.text}</div>"""
 
+    @Action
     def onclick(self):
         self.text = "clicked"

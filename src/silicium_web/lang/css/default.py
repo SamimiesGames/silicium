@@ -1,7 +1,7 @@
 from silicium import Component
 from silicium.utils import require
-from .optimizer import min_css
 
+from . import optimizer
 
 class DefaultTheme(Component):
     build_target = "css"
@@ -9,6 +9,5 @@ class DefaultTheme(Component):
     @property
     def code(self) -> str:
         css = require(__file__, "themes.css")
-        css = min_css(css)
-        return f"<style>{css}</style>"
-
+        css_optimized = optimizer.min_css(css)
+        return f"<style>{css_optimized}</style>"

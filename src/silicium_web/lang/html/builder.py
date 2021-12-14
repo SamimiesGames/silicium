@@ -1,7 +1,8 @@
+import htmlmin
+
 from silicium import Builder
 from silicium.component import AbstractComponent
 from silicium.utils import vars
-import htmlmin
 
 
 class HTMLBuilder(Builder):
