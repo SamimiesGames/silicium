@@ -15,7 +15,7 @@ jobs:
           - Ubuntu
           - Windows
           - MacOs
-        python-versions: [3.7, 3.8, 3.9]
+        python-versions: [3.9]
 
     steps:
       - name: Set python for test ${{ matrix.python-version }}
@@ -26,9 +26,9 @@ jobs:
       - name: Run tests
         run: |
           cd silicium
-          python -m tox --skip-missing-interpreters
+          tox --skip-missing-interpreters
           cd ..
           cd silicium_web
-          python -m tox --skip-missing-interpreters
+          tox --skip-missing-interpreters
         env:
           PYTEST_ADDOPTS: "-vv --duration=10"
