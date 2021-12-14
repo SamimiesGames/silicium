@@ -11,7 +11,6 @@ class BasicHTML(Component):
 
 
 class HTML(AbstractScene):
-    """Return a boilerplate HTML object"""
     def __init__(self):
         self.builder = HTMLBuilder()
 
