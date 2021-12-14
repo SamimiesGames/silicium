@@ -1,28 +1,22 @@
 # Silicium
 
-Silicium is an ahead-of-time interpreted all-language compiler in Python3.
-
-[![Tests](https://github.com/GreyStinger/silicium/actions/workflows/tests.yaml/badge.svg)](https://github.com/GreyStinger/silicium/actions/workflows/tests.yaml)
+Silicium is an ahead-of-time interpreted all-language compiler in Python 3.
 
 # Quick Start
-Silicium uses Python3 as it's main language.
-To get started using Silicium install the required dependencies for your system.
-
-## Dependencies
-To start with Silicium you need to make sure Python 3.6 is installed. 
-
-Here are some one liners that you can use to set it all up.
+1. Install `Python3.7+`
+2. Run `git clone https://github.com/SamimiesGames/silicium.git`
+3. Run `pip install -e .`
 
 ### Linux
 
 Debian based (Ubuntu, Kubuntu, KDE Neon):
 ```
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install python3.6 python3-pip
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install python3.7 python3-pip
 ```
 
 RHEL Based (Redhat, Fedora, Cent-OS):
 ```
-sudo dnf upgrade && sudo dnf install python36
+sudo dnf upgrade && sudo dnf install python37
 ```
 
 Arch Based (Manjaro, Garuda, EndeavourOS):
@@ -34,22 +28,9 @@ sudo pacman -S git && cd /opt && sudo git clone https://aur.archlinux.org/yay-gi
 ```
 
 ```
-sudo yay -Syu --devel --timeupdate && yay -S python36
+sudo yay -Syu --devel --timeupdate && yay -S python37
 ```
 
 ### Windows
 
 For windows you can download python3.6 from [this link](https://www.python.org/ftp/python/3.6.0/python-3.6.0-amd64.exe)
-
-## Installation
-
-To download Silicium run `git clone https://github.com/SamimiesGames/silicium.git` in the folder you would like to keep it in.
-
-Open a terminal in the folder and run `pip install -e .` or for dev run `pip install -r ./requirements_dev.txt`
-
-# Silicium-Web is a progressive, declarative web technologies framework made in Python.
-
-Silicium-Web is a progressive, declarative web technologies framework using Silicium as a base.
-
-It is included in the Silicium package by default and to start using it just head into ./src inside the main silicium package.
-The main.py is an example builder. You can either modify it to make it your own or you can create a new file and use the silicium\_web import.
