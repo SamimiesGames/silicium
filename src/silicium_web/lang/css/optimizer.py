@@ -1,7 +1,7 @@
 import re
 
 
-def min_css(self, in_css):
+def min_css(in_css):
     css = in_css
     css_optimized = ''
 
