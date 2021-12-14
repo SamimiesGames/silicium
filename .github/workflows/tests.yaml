@@ -34,8 +34,8 @@ jobs:
         run: |
           pip install -Ur requirements_dev.txt
           python -m pip install -e .
-      - name: Lint
-        if: matrix.os == 'ubuntu-latest' && matrix.python-version == env.PYTHON_LATEST
-        run: flake8
+      # - name: Lint
+      #   if: matrix.os == 'ubuntu-latest' && matrix.python-version == env.PYTHON_LATEST
+      #   run: flake8
       - name: Run Tests
         run: python -m tox --skip-missing-interpreters
