@@ -17,8 +17,8 @@ setup(
     author=AUTHOR,
     license="MIT",
     description=DESCRIPTION,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"], where="src\\*"),
-    package_dir={"": "src\\silicium"},
+    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"], where="src"),
+    package_dir={"": "src"},
     install_requires=["htmlmin"]
 )
 
