@@ -8,6 +8,7 @@ import uuid
 class AbstractComponent(ABC):
     build_target: str
     parent: any
+    absolute_root: any
     sub_components: list
 
     @property
@@ -30,8 +31,10 @@ class Component(AbstractComponent):
             return
 
         if isinstance(self.parent, AbstractComponent):
+            self.absolute_root = self.parent.absolute_root
             self.parent.sub_components.append(self)
         else:
+            self.absolute_root = self.parent
             self.parent.builder.add_component(self)
 
     def __repr__(self):
