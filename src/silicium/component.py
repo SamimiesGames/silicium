@@ -15,10 +15,6 @@ class AbstractComponent(ABC):
     def code(self) -> str:
         ...
 
-    @abstractmethod
-    def grand_render(self):
-        ...
-
 
 class Component(AbstractComponent):
     def __init__(self, parent, add: bool = True, **kwargs):
