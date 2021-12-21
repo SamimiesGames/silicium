@@ -45,15 +45,3 @@ class Component(AbstractComponent):
     @abstractmethod
     def code(self) -> str:
         ...
-
-    def grand_render(self) -> str:
-        sub_component_index = self.code.rfind("<")
-        left_side, right_side = self.code[:sub_component_index], self.code[sub_component_index:]
-
-        sub_component_html = ""
-
-        if self.sub_components:
-            for sub_component in self.sub_components:
-                sub_component_html += sub_component.grand_render()
-
-        return f"{left_side}{sub_component_html}{right_side}"
