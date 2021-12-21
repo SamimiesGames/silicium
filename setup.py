@@ -1,13 +1,11 @@
 from setuptools import find_packages, setup
 
 NAME = "silicium"
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 URL = "https://github.com/SamimiesGames/silicium"
 
 AUTHOR = "Samimies"
-DESCRIPTION = """
-Silicium is an ahead-of-time interpreted all-language compiler in Python.
-"""
+DESCRIPTION = "Silicium is an ahead-of-time interpreted all-language compiler in Python."
 
 
 setup(
