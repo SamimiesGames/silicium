@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 NAME = "silicium"
-VERSION = "0.1.4"
+VERSION = "0.1.5"
 URL = "https://github.com/SamimiesGames/silicium"
 
 AUTHOR = "Samimies"
