@@ -11,6 +11,10 @@ class AbstractComponent(ABC):
     absolute_root: any
     sub_components: list
 
+    cache_component: bool = False
+
+    used: bool = False
+
     @property
     @abstractmethod
     def code(self) -> str:
@@ -27,6 +31,9 @@ class Component(AbstractComponent):
         for name, value in kwargs.items():
             setattr(self, name, value)
 
+        if self.cache_component and self.used:
+            add = False
+
         if not add:
             return
 
@@ -36,6 +43,8 @@ class Component(AbstractComponent):
         else:
             self.absolute_root = self.parent
             self.parent.builder.add_component(self)
+
+        self.used = True
 
     def __repr__(self):
         return f"{self.__class__.__name__}"
