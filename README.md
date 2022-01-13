@@ -2,10 +2,9 @@
 
 Silicium is an ahead-of-time interpreted all-language compiler in Python 3.
 
-# Quick Start
-1. Install `Python3.7+`
-2. Run `git clone https://github.com/SamimiesGames/silicium.git`
-3. Run `pip install -e .`
+# To Start
+
+**`pip install silicium`**
 
 ### Linux
 
@@ -33,4 +32,4 @@ sudo yay -Syu --devel --timeupdate && yay -S python37
 
 ### Windows
 
-For windows you can download python3.6 from [this link](https://www.python.org/ftp/python/3.6.0/python-3.6.0-amd64.exe)
+Download python3.7 from [this link](https://www.python.org/ftp/python/3.7.0/)
